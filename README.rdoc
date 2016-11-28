@@ -1,3 +1,1 @@
-- rails generate devise CamaleonCms::User
-- Change migration disabling existent attributes
--
+Docs here: http://camaleon.tuzitio.com/documentation/category/40756-uncategorized/custom-login.html

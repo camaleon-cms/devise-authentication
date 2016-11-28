@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160609121449) do
+ActiveRecord::Schema.define(version: 20161128120447) do
 
   create_table "cama_comments", force: :cascade do |t|
     t.string   "author"
@@ -163,12 +163,42 @@ ActiveRecord::Schema.define(version: 20160609121449) do
     t.boolean  "is_valid_email",         default: true
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "encrypted_password",     default: "",       null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,        null: false
+    t.datetime "current_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
+    t.integer  "failed_attempts",        default: 0,        null: false
+    t.string   "unlock_token"
+    t.datetime "locked_at"
+    t.datetime "last_sign_in_at"
   end
 
+  add_index "cama_users", ["confirmation_token"], name: "index_cama_users_on_confirmation_token", unique: true
   add_index "cama_users", ["email"], name: "index_cama_users_on_email"
+  add_index "cama_users", ["reset_password_token"], name: "index_cama_users_on_reset_password_token", unique: true
   add_index "cama_users", ["role"], name: "index_cama_users_on_role"
   add_index "cama_users", ["site_id"], name: "index_cama_users_on_site_id"
+  add_index "cama_users", ["unlock_token"], name: "index_cama_users_on_unlock_token", unique: true
   add_index "cama_users", ["username"], name: "index_cama_users_on_username"
+
+  create_table "plugins_attacks", force: :cascade do |t|
+    t.string   "path"
+    t.string   "browser_key"
+    t.integer  "site_id"
+    t.datetime "created_at"
+  end
+
+  add_index "plugins_attacks", ["browser_key"], name: "index_plugins_attacks_on_browser_key"
+  add_index "plugins_attacks", ["path"], name: "index_plugins_attacks_on_path"
+  add_index "plugins_attacks", ["site_id"], name: "index_plugins_attacks_on_site_id"
 
   create_table "plugins_contact_forms", force: :cascade do |t|
     t.integer  "site_id"

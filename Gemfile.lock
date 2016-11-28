@@ -71,7 +71,7 @@ GEM
     breadcrumbs_on_rails (3.0.1)
     builder (3.2.2)
     byebug (9.0.6)
-    cama_contact_form (0.0.16)
+    cama_contact_form (0.0.17)
       rails
     cancancan (1.15.0)
     coffee-rails (4.1.1)

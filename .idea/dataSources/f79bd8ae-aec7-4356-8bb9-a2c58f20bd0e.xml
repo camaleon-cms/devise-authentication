@@ -1,0 +1,701 @@
+<dataSource name="Sqlite (Xerial) - development.sqlite3">
+  <database-model serializer="dbm" rdbms="SQLITE" format-version="2.6">
+    <schema id="1">
+      <visible>1</visible>
+    </schema>
+    <table id="2" parent="1" name="cama_comments" />
+    <table id="3" parent="1" name="cama_custom_fields" />
+    <table id="4" parent="1" name="cama_custom_fields_relationships" />
+    <table id="5" parent="1" name="cama_metas" />
+    <table id="6" parent="1" name="cama_posts" />
+    <table id="7" parent="1" name="cama_term_relationships" />
+    <table id="8" parent="1" name="cama_term_taxonomy" />
+    <table id="9" parent="1" name="cama_user_relationships" />
+    <table id="10" parent="1" name="cama_users" />
+    <table id="11" parent="1" name="plugins_attacks" />
+    <table id="12" parent="1" name="plugins_contact_forms" />
+    <table id="13" parent="1" name="schema_migrations" />
+    <table id="14" parent="1" name="sqlite_sequence" />
+    <column id="15" parent="2" name="id">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="16" parent="2" name="author">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="17" parent="2" name="author_email">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="18" parent="2" name="author_url">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="19" parent="2" name="author_IP">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="20" parent="2" name="content">
+      <data-type>TEXT(0,-1)|12</data-type>
+    </column>
+    <column id="21" parent="2" name="approved">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+      <default-expression>'pending'</default-expression>
+    </column>
+    <column id="22" parent="2" name="agent">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="23" parent="2" name="typee">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="24" parent="2" name="comment_parent">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="25" parent="2" name="post_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="26" parent="2" name="user_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="27" parent="2" name="created_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="28" parent="2" name="updated_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <index id="29" parent="2" name="index_cama_comments_on_approved">
+      <columns>approved</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="30" parent="2" name="index_cama_comments_on_comment_parent">
+      <columns>comment_parent</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="31" parent="2" name="index_cama_comments_on_post_id">
+      <columns>post_id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="32" parent="2" name="index_cama_comments_on_user_id">
+      <columns>user_id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="33" parent="2">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="34" parent="3" name="id">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="35" parent="3" name="object_class">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="36" parent="3" name="name">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="37" parent="3" name="slug">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="38" parent="3" name="objectid">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="39" parent="3" name="parent_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="40" parent="3" name="field_order">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="41" parent="3" name="count">
+      <data-type>INTEGER(0,-1)|4</data-type>
+      <default-expression>0</default-expression>
+    </column>
+    <column id="42" parent="3" name="is_repeat">
+      <data-type>BOOLEAN(0,-1)|4</data-type>
+      <default-expression>'f'</default-expression>
+    </column>
+    <column id="43" parent="3" name="description">
+      <data-type>TEXT(0,-1)|12</data-type>
+    </column>
+    <column id="44" parent="3" name="status">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <index id="45" parent="3" name="index_cama_custom_fields_on_object_class">
+      <columns>object_class</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="46" parent="3" name="index_cama_custom_fields_on_slug">
+      <columns>slug</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="47" parent="3" name="index_cama_custom_fields_on_objectid">
+      <columns>objectid</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="48" parent="3" name="index_cama_custom_fields_on_parent_id">
+      <columns>parent_id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="49" parent="3">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="50" parent="4" name="id">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="51" parent="4" name="objectid">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="52" parent="4" name="custom_field_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="53" parent="4" name="term_order">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="54" parent="4" name="object_class">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="55" parent="4" name="value">
+      <data-type>TEXT(1073741823)(0,-1)|12</data-type>
+    </column>
+    <column id="56" parent="4" name="custom_field_slug">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="57" parent="4" name="group_number">
+      <data-type>INTEGER(0,-1)|4</data-type>
+      <default-expression>0</default-expression>
+    </column>
+    <index id="58" parent="4" name="index_cama_custom_fields_relationships_on_objectid">
+      <columns>objectid</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="59" parent="4" name="index_cama_custom_fields_relationships_on_custom_field_id">
+      <columns>custom_field_id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="60" parent="4" name="index_cama_custom_fields_relationships_on_object_class">
+      <columns>object_class</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="61" parent="4" name="index_cama_custom_fields_relationships_on_custom_field_slug">
+      <columns>custom_field_slug</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="62" parent="4">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="63" parent="5" name="id">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="64" parent="5" name="key">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="65" parent="5" name="value">
+      <data-type>TEXT(1073741823)(0,-1)|12</data-type>
+    </column>
+    <column id="66" parent="5" name="objectid">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="67" parent="5" name="object_class">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <index id="68" parent="5" name="index_cama_metas_on_key">
+      <columns>key</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="69" parent="5" name="index_cama_metas_on_objectid">
+      <columns>objectid</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="70" parent="5" name="index_cama_metas_on_object_class">
+      <columns>object_class</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="71" parent="5">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="72" parent="6" name="id">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="73" parent="6" name="title">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="74" parent="6" name="slug">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="75" parent="6" name="content">
+      <data-type>TEXT(1073741823)(0,-1)|12</data-type>
+    </column>
+    <column id="76" parent="6" name="content_filtered">
+      <data-type>TEXT(1073741823)(0,-1)|12</data-type>
+    </column>
+    <column id="77" parent="6" name="status">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+      <default-expression>'published'</default-expression>
+    </column>
+    <column id="78" parent="6" name="published_at">
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="79" parent="6" name="post_parent">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="80" parent="6" name="visibility">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+      <default-expression>'public'</default-expression>
+    </column>
+    <column id="81" parent="6" name="visibility_value">
+      <data-type>TEXT(0,-1)|12</data-type>
+    </column>
+    <column id="82" parent="6" name="post_class">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+      <default-expression>'Post'</default-expression>
+    </column>
+    <column id="83" parent="6" name="created_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="84" parent="6" name="updated_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="85" parent="6" name="user_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="86" parent="6" name="post_order">
+      <data-type>INTEGER(0,-1)|4</data-type>
+      <default-expression>0</default-expression>
+    </column>
+    <column id="87" parent="6" name="taxonomy_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="88" parent="6" name="is_feature">
+      <data-type>BOOLEAN(0,-1)|4</data-type>
+      <default-expression>'f'</default-expression>
+    </column>
+    <index id="89" parent="6" name="index_cama_posts_on_slug">
+      <columns>slug</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="90" parent="6" name="index_cama_posts_on_status">
+      <columns>status</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="91" parent="6" name="index_cama_posts_on_post_parent">
+      <columns>post_parent</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="92" parent="6" name="index_cama_posts_on_post_class">
+      <columns>post_class</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="93" parent="6" name="index_cama_posts_on_user_id">
+      <columns>user_id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="94" parent="6">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="95" parent="7" name="id">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="96" parent="7" name="objectid">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="97" parent="7" name="term_order">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="98" parent="7" name="term_taxonomy_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <index id="99" parent="7" name="index_cama_term_relationships_on_objectid">
+      <columns>objectid</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="100" parent="7" name="index_cama_term_relationships_on_term_order">
+      <columns>term_order</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="101" parent="7" name="index_cama_term_relationships_on_term_taxonomy_id">
+      <columns>term_taxonomy_id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="102" parent="7">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="103" parent="8" name="id">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="104" parent="8" name="taxonomy">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="105" parent="8" name="description">
+      <data-type>TEXT(1073741823)(0,-1)|12</data-type>
+    </column>
+    <column id="106" parent="8" name="parent_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="107" parent="8" name="count">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="108" parent="8" name="name">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="109" parent="8" name="slug">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="110" parent="8" name="term_group">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="111" parent="8" name="term_order">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="112" parent="8" name="status">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="113" parent="8" name="created_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="114" parent="8" name="updated_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="115" parent="8" name="user_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <index id="116" parent="8" name="index_cama_term_taxonomy_on_taxonomy">
+      <columns>taxonomy</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="117" parent="8" name="index_cama_term_taxonomy_on_parent_id">
+      <columns>parent_id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="118" parent="8" name="index_cama_term_taxonomy_on_slug">
+      <columns>slug</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="119" parent="8" name="index_cama_term_taxonomy_on_term_order">
+      <columns>term_order</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="120" parent="8" name="index_cama_term_taxonomy_on_user_id">
+      <columns>user_id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="121" parent="8">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="122" parent="9" name="id">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="123" parent="9" name="term_order">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="124" parent="9" name="active">
+      <data-type>INTEGER(0,-1)|4</data-type>
+      <default-expression>1</default-expression>
+    </column>
+    <column id="125" parent="9" name="term_taxonomy_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="126" parent="9" name="user_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <index id="127" parent="9" name="index_cama_user_relationships_on_term_taxonomy_id">
+      <columns>term_taxonomy_id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="128" parent="9" name="index_cama_user_relationships_on_user_id">
+      <columns>user_id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="129" parent="9">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="130" parent="10" name="id">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="131" parent="10" name="username">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="132" parent="10" name="role">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+      <default-expression>'client'</default-expression>
+    </column>
+    <column id="133" parent="10" name="email">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="134" parent="10" name="slug">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="135" parent="10" name="password_digest">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="136" parent="10" name="auth_token">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="137" parent="10" name="password_reset_token">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="138" parent="10" name="parent_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="139" parent="10" name="password_reset_sent_at">
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="140" parent="10" name="last_login_at">
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="141" parent="10" name="created_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="142" parent="10" name="updated_at">
+      <mandatory>1</mandatory>
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="143" parent="10" name="site_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+      <default-expression>-1</default-expression>
+    </column>
+    <column id="144" parent="10" name="confirm_email_token">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="145" parent="10" name="confirm_email_sent_at">
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="146" parent="10" name="is_valid_email">
+      <data-type>BOOLEAN(0,-1)|4</data-type>
+      <default-expression>'t'</default-expression>
+    </column>
+    <column id="147" parent="10" name="first_name">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="148" parent="10" name="last_name">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="149" parent="10" name="encrypted_password">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(0,-1)|12</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="150" parent="10" name="reset_password_token">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="151" parent="10" name="reset_password_sent_at">
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="152" parent="10" name="remember_created_at">
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="153" parent="10" name="sign_in_count">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+      <default-expression>0</default-expression>
+    </column>
+    <column id="154" parent="10" name="current_sign_in_at">
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="155" parent="10" name="current_sign_in_ip">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="156" parent="10" name="last_sign_in_ip">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="157" parent="10" name="confirmation_token">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="158" parent="10" name="confirmed_at">
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="159" parent="10" name="confirmation_sent_at">
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="160" parent="10" name="unconfirmed_email">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="161" parent="10" name="failed_attempts">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+      <default-expression>0</default-expression>
+    </column>
+    <column id="162" parent="10" name="unlock_token">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="163" parent="10" name="locked_at">
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="164" parent="10" name="last_sign_in_at">
+      <data-type>TIMESTAMP(0,-1)|12</data-type>
+    </column>
+    <index id="165" parent="10" name="index_cama_users_on_username">
+      <columns>username</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="166" parent="10" name="index_cama_users_on_role">
+      <columns>role</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="167" parent="10" name="index_cama_users_on_email">
+      <columns>email</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="168" parent="10" name="index_cama_users_on_site_id">
+      <columns>site_id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="169" parent="10" name="index_cama_users_on_reset_password_token">
+      <columns>reset_password_token</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="170" parent="10" name="index_cama_users_on_confirmation_token">
+      <columns>confirmation_token</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="171" parent="10" name="index_cama_users_on_unlock_token">
+      <columns>unlock_token</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="172" parent="10">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="173" parent="11" name="id">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="174" parent="11" name="path">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="175" parent="11" name="browser_key">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="176" parent="11" name="site_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="177" parent="11" name="created_at">
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <index id="178" parent="11" name="index_plugins_attacks_on_path">
+      <columns>path</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="179" parent="11" name="index_plugins_attacks_on_browser_key">
+      <columns>browser_key</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="180" parent="11" name="index_plugins_attacks_on_site_id">
+      <columns>site_id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="181" parent="11">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="182" parent="12" name="id">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="183" parent="12" name="site_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="184" parent="12" name="count">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="185" parent="12" name="parent_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="186" parent="12" name="name">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="187" parent="12" name="slug">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="188" parent="12" name="description">
+      <data-type>TEXT(0,-1)|12</data-type>
+    </column>
+    <column id="189" parent="12" name="value">
+      <data-type>TEXT(0,-1)|12</data-type>
+    </column>
+    <column id="190" parent="12" name="settings">
+      <data-type>TEXT(0,-1)|12</data-type>
+    </column>
+    <column id="191" parent="12" name="created_at">
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <column id="192" parent="12" name="updated_at">
+      <data-type>DATETIME(0,-1)|12</data-type>
+    </column>
+    <key id="193" parent="12">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="194" parent="13" name="version">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <index id="195" parent="13" name="unique_schema_migrations">
+      <columns>version</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <column id="196" parent="14" name="name">
+      <data-type>(0,-1)|12</data-type>
+    </column>
+    <column id="197" parent="14" name="seq">
+      <data-type>(0,-1)|12</data-type>
+    </column>
+  </database-model>
+</dataSource>
